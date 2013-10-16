@@ -1,0 +1,13 @@
+[ui]
+username = jozsefgubicza
+ignore = ~/.hgignore
+
+[extensions]
+fetch =
+rebase =
+
+[auth]
+bb.prefix = bitbucket.org
+bb.username = jozsefgubicza
+bb.password = <<< INSERT PWD HERE >>>
+bb.schemes = http https

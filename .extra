@@ -1,10 +1,5 @@
 # .bash_profile
 
-# Get the aliases and functions
-if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
-fi
-
 # User specific environment and startup programs
 
 # export PS1="\[\e]2;\u@\H \w\a\e[32;1m\]>\[\e[0m\] "
@@ -32,5 +27,8 @@ export CODE=$HOME/Programming/
 
 # leiningen directory
 export PATH=$PATH:$HOME/leiningen
+
+# export node, jshint
+export PATH=$PATH:$HOME/nvm/v0.8.19/bin/
 
 export PATH
