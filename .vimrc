@@ -4,7 +4,14 @@
 
 execute pathogen#infect()
 syntax on
-filetype plugin indent on
+filetype plugin on
+
+" -------------
+" list/listchars
+" -------------
+
+set list
+set listchars=tab:›\ ,trail:·,eol:¬,nbsp:_
 
 " -------------
 " DMENU
