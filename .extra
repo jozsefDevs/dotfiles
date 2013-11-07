@@ -11,7 +11,7 @@ export PATH=$PATH:$HOME/bin
 export CAT=$HOME/Programming/apache-tomcat-7.0.35/bin
 export CATALINA_HOME=$HOME/Programming/apache-tomcat-7.0.35
 export CATALINA_OPTS="-Xms512m -Xmx512m"
-export JAVA_HOME=/usr/java/latest
+export JAVA_HOME=/usr/java/jdk1.7.0_13
 export M2_HOME=$HOME/Programming/apache-maven-3.0.4/
 export MAVEN_OPTS="-Xms256m -Xmx1G -XX:PermSize=300m"
 export PATH=$PATH:$HOME/Programming/apache-maven-3.0.4/bin/
