@@ -5,11 +5,17 @@
 	s = status -s
 	df = diff --color --color-words --abbrev
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	last = log -1 HEAD
 [color]
 	ui = always
 [core]
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
+	editor = vim
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -25,6 +31,7 @@
 	untracked = cyan
 [merge]
 	log = true
+	tool = meld
 [url "git@github.com:"]
 	insteadOf = "gh:"
 	pushInsteadOf = "github:"

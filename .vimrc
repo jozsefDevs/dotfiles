@@ -18,22 +18,22 @@ set listchars=tab:›\ ,trail:·,eol:¬,nbsp:_
 " -------------
 
 " Strip the newline from the end of a string
-function! Chomp(str)
-  return substitute(a:str, '\n$', '', '')
-endfunction
-
-" Find a file and pass it to cmd
-function! DmenuOpen(cmd)
-  let fname = Chomp(system("find . -not -path './build/*' | dmenu -i -l 40 -p " . a:cmd))
-  if empty(fname)
-    return
-  endif
-  execute a:cmd . " " . fname
-endfunction
-
-map <c-t> :call DmenuOpen("tabe")<cr>
-map <c-f> :call DmenuOpen("e")<cr>
-nnoremap vt :call DmenuOpen("vsplit")<cr>
+"function! Chomp(str)
+"  return substitute(a:str, '\n$', '', '')
+"endfunction
+"
+"" Find a file and pass it to cmd
+"function! DmenuOpen(cmd)
+"  let fname = Chomp(system("find . -not -path './build/*' | dmenu -i -l 40 -p " . a:cmd))
+"  if empty(fname)
+"    return
+"  endif
+"  execute a:cmd . " " . fname
+"endfunction
+"
+"map <c-t> :call DmenuOpen("tabe")<cr>
+"map <c-f> :call DmenuOpen("e")<cr>
+"nnoremap vt :call DmenuOpen("vsplit")<cr>
 
 " -------------
 " TAB HANDLING
@@ -123,3 +123,40 @@ function TurnOnClojureFolding()
 endfunction
  
 autocmd FileType clojure call TurnOnClojureFolding()
+
+" -------------
+" list/listchars
+" -------------
+
+"ctrlp ignore
+set wildignore+=*/tmp/*,*/build/*,*/target/*,*.so,*.swp,*.zip
+let g:ctrlp_working_path_mode = '0'
+"let g:ctrlp_working_path_mode = 2
+
+
+" -------------
+" autoindent
+" -------------
+set ai
+set hlsearch
+
+" -------------
+" https://github.com/pangloss/vim-javascript
+" -------------
+set foldmethod=syntax
+
+let javascript_enable_domhtmlcss=1
+let b:javascript_fold=1
+
+" -------------
+" show airline even with 1 file
+" -------------
+set laststatus=2
+
+let g:airline_powerline_fonts=1
+let g:airline#extensions#syntastic#enabled=1
+
+" -------------
+" signify
+" -------------
+let g:signify_vcs_list = [ 'svn', 'git', 'hg' ]
