@@ -129,7 +129,7 @@ autocmd FileType clojure call TurnOnClojureFolding()
 " -------------
 
 "ctrlp ignore
-set wildignore+=*/tmp/*,*/build/*,*/target/*,*.so,*.swp,*.zip
+set wildignore+=*/tmp/*,*/build/*,*/target/*,*/bin/*,*.so,*.swp,*.zip
 let g:ctrlp_working_path_mode = '0'
 "let g:ctrlp_working_path_mode = 2
 
@@ -160,3 +160,31 @@ let g:airline#extensions#syntastic#enabled=1
 " signify
 " -------------
 let g:signify_vcs_list = [ 'svn', 'git', 'hg' ]
+
+
+" ----------------------------------
+" drag visuals plugin
+" can drag visual blocks with arrows
+" ----------------------------------
+vmap  <expr>  <LEFT>   DVB_Drag('left')
+vmap  <expr>  <RIGHT>  DVB_Drag('right')
+vmap  <expr>  <DOWN>   DVB_Drag('down')
+vmap  <expr>  <UP>     DVB_Drag('up')
+vmap  <expr>  D        DVB_Duplicate()
+
+let g:DVB_TrimWS = 1
+
+" ----------------------------------
+" set leader key to comma
+" ----------------------------------
+let mapleader = ","
+
+" ----------------------------------
+" map Silver Searcher
+" ----------------------------------
+map <leader>a :!ag<space>
+
+" ----------------------------------
+" search for word under cursor with Silver Searcher
+" ----------------------------------
+map <leader>A :!ag "<C-r>=expand('<cword>')<CR>"
