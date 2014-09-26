@@ -16,6 +16,13 @@ ag: (a.k.a. silver searcher): https://github.com/ggreer/the_silver_searcher
 
 editorconfig: http://editorconfig.org/
 
+### for Max OS X
+
+sudo chown -R !username! /usr/local/include
+sudo chown -R !username! /usr/local/lib
+brew install tmux
+brew install ag
+
 ## ...after that
 
 1. Clone this repo and copy its contents to ~
