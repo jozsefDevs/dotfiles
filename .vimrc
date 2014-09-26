@@ -182,9 +182,9 @@ let mapleader = ","
 " ----------------------------------
 " map Silver Searcher
 " ----------------------------------
-map <leader>a :!ag<space>
+map <leader>a :!Ag<space>
 
 " ----------------------------------
 " search for word under cursor with Silver Searcher
 " ----------------------------------
-map <leader>A :!ag "<C-r>=expand('<cword>')<CR>"
+map <leader>A :!Ag "<C-r>=expand('<cword>')<CR>"
