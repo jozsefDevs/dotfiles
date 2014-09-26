@@ -19,8 +19,11 @@ editorconfig: http://editorconfig.org/
 ### for Max OS X
 
 sudo chown -R !username! /usr/local/include
+
 sudo chown -R !username! /usr/local/lib
+
 brew install tmux
+
 brew install ag
 
 ## ...after that
