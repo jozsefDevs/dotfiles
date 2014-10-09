@@ -3,6 +3,9 @@
 # install jshint
 npm install jshint -g
 
+# install csslint
+npm install csslint -g
+
 # VIM - install pathogen
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
