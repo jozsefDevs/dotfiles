@@ -11,7 +11,7 @@ filetype plugin on
 " -------------
 
 set list
-set listchars=tab:›\ ,trail:·,eol:¬,nbsp:_
+set listchars=tab:›\ ,trail:·,nbsp:_
 
 " -------------
 " DMENU
@@ -39,14 +39,14 @@ set listchars=tab:›\ ,trail:·,eol:¬,nbsp:_
 " TAB HANDLING
 " -------------
 
-nnoremap th  :tabfirst<CR>
-nnoremap tj  :tabnext<CR>
-nnoremap tk  :tabprev<CR>
-nnoremap tl  :tablast<CR>
-nnoremap tt  :tabedit<Space>
-nnoremap tn  :tabnext<Space>
-nnoremap tm  :tabm<Space>
-nnoremap td  :tabclose<CR>
+" nnoremap th  :tabfirst<CR>
+" nnoremap tj  :tabnext<CR>
+" nnoremap tk  :tabprev<CR>
+" nnoremap tl  :tablast<CR>
+" nnoremap tt  :tabedit<Space>
+" nnoremap tn  :tabnext<Space>
+" nnoremap tm  :tabm<Space>
+" nnoremap td  :tabclose<CR>
 " Alternatively use
 "nnoremap th :tabnext<CR>
 "nnoremap tl :tabprev<CR>
@@ -86,7 +86,7 @@ let vimclojure#ParenRainbow = 1
 " ---------------------------------------------------------------------------
 "  Automagic Clojure folding on defn's and defmacro's
 "
-function GetClojureFold()
+function! GetClojureFold()
       if getline(v:lnum) =~ '^\s*(defn.*\s'
             return ">1"
       elseif getline(v:lnum) =~ '^\s*(defmacro.*\s'
@@ -116,12 +116,12 @@ function GetClojureFold()
             return "="
       endif
 endfunction
- 
-function TurnOnClojureFolding()
+
+function! TurnOnClojureFolding()
       setlocal foldexpr=GetClojureFold()
       setlocal foldmethod=expr
 endfunction
- 
+
 autocmd FileType clojure call TurnOnClojureFolding()
 
 " -------------
@@ -131,8 +131,10 @@ autocmd FileType clojure call TurnOnClojureFolding()
 "ctrlp ignore
 set wildignore+=*/tmp/*,*/build/*,*/target/*,*/bin/*,*.so,*.swp,*.zip
 let g:ctrlp_working_path_mode = '0'
-"let g:ctrlp_working_path_mode = 2
-
+let g:ctrlp_lazy_update = 1
+let g:ctrlp_max_files = 0
+let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+nmap lw :CtrlP<CR><C-\>w
 
 " -------------
 " autoindent
@@ -166,13 +168,13 @@ let g:signify_vcs_list = [ 'svn', 'git', 'hg' ]
 " drag visuals plugin
 " can drag visual blocks with arrows
 " ----------------------------------
-vmap  <expr>  <LEFT>   DVB_Drag('left')
-vmap  <expr>  <RIGHT>  DVB_Drag('right')
-vmap  <expr>  <DOWN>   DVB_Drag('down')
-vmap  <expr>  <UP>     DVB_Drag('up')
-vmap  <expr>  D        DVB_Duplicate()
-
-let g:DVB_TrimWS = 1
+"vmap  <expr>  <LEFT>   DVB_Drag('left')
+"vmap  <expr>  <RIGHT>  DVB_Drag('right')
+"vmap  <expr>  <DOWN>   DVB_Drag('down')
+"vmap  <expr>  <UP>     DVB_Drag('up')
+"vmap  <expr>  D        DVB_Duplicate()
+"
+"let g:DVB_TrimWS = 1
 
 " ----------------------------------
 " set leader key to comma
@@ -188,3 +190,40 @@ map <leader>a :!Ag<space>
 " search for word under cursor with Silver Searcher
 " ----------------------------------
 map <leader>A :!Ag "<C-r>=expand('<cword>')<CR>"
+
+" ----------------------------------
+	" using buffers instead of tabs
+" ----------------------------------
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" My preference with using buffers. See `:h hidden` for more details
+set hidden
+
+" To open a new empty buffer
+" This replaces :tabnew which I used to bind to this mapping
+nmap <leader>t :enew<cr>
+
+" Move to the next buffer
+nmap tk :bnext<CR>
+
+" Move to the previous buffer
+nmap tj :bprevious<CR>
+
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nmap tq :bp <BAR> bd #<CR>
+
+" ----------------------------------
+" using buffers instead of tabs
+" ----------------------------------
+nnoremap <F6> :GundoToggle<CR>
+
+" ----------------------------------
+" startify
+" ----------------------------------
+let g:startify_custom_header =
+\ map(split(system('fortune | cowsay'), '\n'), '"   ". v:val') + ['','']

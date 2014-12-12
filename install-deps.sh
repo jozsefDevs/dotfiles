@@ -26,6 +26,8 @@ cd ~/.vim/bundle && hg clone https://bitbucket.org/ludovicchabant/vim-lawrencium
 cd ~/.vim/bundle && git clone https://github.com/mhinz/vim-signify
 cd ~/.vim/bundle && git clone https://github.com/duganchen/vim-soy
 cd ~/.vim/bundle && git clone https://github.com/epmatsw/ag.vim
+cd ~/.vim/bundle && hg clone http://bitbucket.org/sjl/gundo.vim
+cd ~/.vim/bundle && git clone https://github.com/mhinz/vim-startify
 
 # make default directory
 mkdir ~/code && cd ~/code
