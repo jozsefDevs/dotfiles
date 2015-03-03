@@ -1,32 +1,5 @@
 Install
+Install plugins w. the following commands
 
-Please install the following plugins here
-
-~/.vim/bundle/
-├── ctrlp.vim
-├── editorconfig
-├── emmet-vim
-├── jshint.vim
-├── syntastic
-├── tern_for_vim
-├── vim-airline
-├── vim-indent-guides
-├── vim-javascript
-├── vim-lawrencium
-├── vim-signify
-└── vim-soy
-
-Maybe with running the following
-
-git clone https://github.com/kien/ctrlp.vim ~/.vim/bundle
-git clone https://github.com/editorconfig/editorconfig-vim ~/.vim/bundle
-git clone http://mattn.github.io/emmet-vim ~/.vim/bundle
-git clone https://github.com/walm/jshint.vim ~/.vim/bundle
-git clone https://github.com/scrooloose/syntastic ~/.vim/bundle
-git clone https://github.com/marijnh/tern_for_vim ~/.vim/bundle
-git clone https://github.com/bling/vim-airline ~/.vim/bundle
-git clone https://github.com/nathanaelkane/vim-indent-guides.git ~/.vim/bundle
-git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle
-git clone https://bitbucket.org/ludovicchabant/vim-lawrencium ~/.vim/bundle
-git clone https://github.com/mhinz/vim-signify ~/.vim/bundle
-git clone https://github.com/duganchen/vim-soy ~/.vim/bundle
+git submodule init
+git submodule update
