@@ -19,9 +19,13 @@ indent_style = space
 indent_size = 2
 
 [*.jsp]
-indent_style = space
-tab_width = 4
+indent_style = tab
 
 [*.jspf]
-indent_style = space
-tab_width = 4
+indent_style = tab
+
+[*.java]
+indent_style = tab
+
+[*.tld]
+indent_style = tab

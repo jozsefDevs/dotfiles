@@ -1,6 +1,6 @@
 " setting system font
 
-set guifont=Inconsolata-dz\ for\ Powerline:h11
+set guifont=Inconsolata-dz\ for\ Powerline:h14
 
 " -------------
 " PATHOGEN - PLUGIN INSTALL
