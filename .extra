@@ -12,8 +12,8 @@ export PATH=$PATH:$HOME/bin
 # export CATALINA_HOME=$HOME/Programming/apache-tomcat-7.0.35
 # export CATALINA_OPTS="-Xms512m -Xmx512m"
 
-export JAVA_HOME=/home/gjozsi/Installs/jdk1.6.0_45
-PATH=$PATH:$JAVA_HOME/bin
+# export JAVA_HOME=/home/gjozsi/Installs/jdk1.6.0_45
+# PATH=$PATH:$JAVA_HOME/bin
 
 # export M2_HOME=$HOME/Programming/apache-maven-3.0.4/
 # export MAVEN_OPTS="-Xms256m -Xmx1G -XX:PermSize=300m"
@@ -34,17 +34,14 @@ PATH=$PATH:$JAVA_HOME/bin
 # export node, jshint
 #export PATH=$PATH:$HOME/nvm/v0.8.19/bin/
 
-export SHUMW=$HOME/Programming/Shumway
-export ASC=$SHUMW/utils/asc.jar
-export AVM=$SHUMW/utils/tamarin-redux/shell/avmshell
-export BUILTINABC=$SHUMW/utils/tamarin-redux/generated/builtin.abc
-export SHELLABC=$SHUMW/src/avm2/generated/shell/shell.abc
-export JS=$SHUMW/utils/jsshell/js
-
 export TMUXIFIER=$HOME/.tmuxifier
 PATH=$PATH:$TMUXIFIER/bin
 
 # tmuxifier
 eval "$(tmuxifier init -)"
 
+# brew bashcompletion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+. $(brew --prefix)/etc/bash_completion
+fi
 export PATH

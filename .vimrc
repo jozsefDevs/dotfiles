@@ -1,3 +1,7 @@
+" setting system font
+
+set guifont=Inconsolata-dz\ for\ Powerline:h14
+
 " -------------
 " PATHOGEN - PLUGIN INSTALL
 " -------------
@@ -146,6 +150,7 @@ set hlsearch
 " https://github.com/pangloss/vim-javascript
 " -------------
 set foldmethod=syntax
+set nofoldenable
 
 let javascript_enable_domhtmlcss=1
 let b:javascript_fold=1
@@ -157,6 +162,8 @@ set laststatus=2
 
 let g:airline_powerline_fonts=1
 let g:airline#extensions#syntastic#enabled=1
+let g:syntastic_css_csslint_args = '--ignore=box-sizing,adjoining-classes'
+let g:syntastic_javascript_checkers = ["eslint"]
 
 " -------------
 " signify
