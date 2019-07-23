@@ -1,3 +1,5 @@
+[user]
+	name = József Gubicza
 [alias]
 	c = commit -am
 	up = pull
@@ -16,6 +18,7 @@
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
 	editor = vim
+	autocrlf = input
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -44,13 +47,13 @@
 	pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
-
-# Any GitHub repo with my username should be checked out r/w by default
-# http://rentzsch.tumblr.com/post/564806957/public-but-hackable-git-submodules
-[url "git@github.com:jozsefDevs/"]
-  insteadOf = "git://github.com/jozsefDevs/"
-[user]
-	name = jozsefDevs
-	email = jozsefDevs@users.noreply.github.com
 [push]
-	default = simple
+	default = current
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/gubiczajozsef/.stCommitMsg
